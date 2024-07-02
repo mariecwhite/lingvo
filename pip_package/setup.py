@@ -20,7 +20,7 @@ from setuptools import setup
 from setuptools.command.install import install
 from setuptools.dist import Distribution
 
-__version__ = '0.13.1'
+__version__ = '0.12.7'
 project_name = 'lingvo'
 if '--project_name' in sys.argv:
   project_name_idx = sys.argv.index('--project_name')
@@ -39,7 +39,7 @@ REQUIRED_PACKAGES = [
     'jupyter',
     'matplotlib',
     'model-pruning-google-research',
-    'Pillow~=10.0.0',
+    'Pillow',
     'protobuf',
     'scikit-learn',
     'sentencepiece',
@@ -47,8 +47,8 @@ REQUIRED_PACKAGES = [
     'tensorflow-datasets',
     'tensorflow-hub',
     'tensorflow-probability',
-    'tensorflow-text~=2.13.0',
-    'tensorflow~=2.13.0',
+    'tensorflow-text',
+    'tensorflow',
 ]
 
 
@@ -82,7 +82,7 @@ setup(
         include=find_namespace_packages(
             include=['lingvo*'], exclude=['*.params*'])),
     include_package_data=True,
-    python_requires='>=3.8,<3.11',
+    python_requires='>=3.8',
     install_requires=REQUIRED_PACKAGES,
     zip_safe=False,
     cmdclass={
@@ -99,6 +99,7 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3 :: Only',
         'Topic :: Scientific/Engineering',
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
